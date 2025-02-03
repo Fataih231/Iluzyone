@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+}
+
+.illusion-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.spiral {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-image: conic-gradient(#ff5733, #33ff57, #5733ff, #ff5733);
+    animation: rotateSpiral 10s linear infinite, colorChange 5s ease-in-out infinite;
+}
+
+@keyframes rotateSpiral {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        background-image: conic-gradient(#ff5733, #33ff57, #5733ff, #ff5733);
+    }
+    50% {
+        background-image: conic-gradient(#5733ff, #ff5733, #33ff57, #5733ff);
+    }
+    100% {
+        background-image: conic-gradient(#ff5733, #33ff57, #5733ff, #ff5733);
+    }
+}
